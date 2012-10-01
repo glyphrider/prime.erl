@@ -13,8 +13,9 @@ or
 then
 
 	2> prime:prime(37).
+	true
 	3> prime:factors(8).
-
+	[2,2,2]
 
 To run unit tests (eunit):
 
