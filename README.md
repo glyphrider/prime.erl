@@ -21,3 +21,7 @@ To run unit tests (eunit):
 
 	erlc -DTEST prime.erl
 	erl prime:test().
+
+There's also a handy **Makefile** that automates all of the above
+
+	make
