@@ -13,7 +13,7 @@ prime(1) -> false;
 prime(N) when N rem 1 == 0 -> prime(N,2).
 
 factors(N,M,L) when N == M -> [M|L];
-factors(N,M,L) when N < M -> [L];
+factors(N,M,L) when N < M -> L;
 factors(N,M,L) when N rem M == 0 -> factors(N div M,M,[M|L]);
 factors(N,M,L) -> factors(N,M+1,L).
 
@@ -31,6 +31,7 @@ eight_is_not_prime_test() -> false = prime(8).
 nine_is_not_prime_test() -> false = prime(9).
 ten_is_not_prime_test() -> false = prime(10).
 
+prime_factors_of_one_test() -> [] = factors(1).
 prime_factors_of_six_test() -> [2,3] = factors(6).
 prime_factors_of_eight_test() -> [2,2,2] = factors(8).
 prime_factors_of_twofiftysix_test() -> [2,2,2,2,2,2,2,2] = factors(256).
