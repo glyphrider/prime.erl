@@ -9,7 +9,7 @@ prime(N,M) when N == M -> true;
 prime(N,M) when N rem M == 0 -> false;
 prime(N,M) -> prime(N,M+1).
 
-prime(1) -> false;
+prime(N) when N < 2 -> false;
 prime(N) when N rem 1 == 0 -> prime(N,2).
 
 factors(N,M,L) when N == M -> [M|L];
@@ -17,6 +17,7 @@ factors(N,M,L) when N < M -> L;
 factors(N,M,L) when N rem M == 0 -> factors(N div M,M,[M|L]);
 factors(N,M,L) -> factors(N,M+1,L).
 
+% list is build in decending order, so reverse it
 factors(N) -> lists:reverse(factors(N,2,[])).
 
 -ifdef(EUNIT).
